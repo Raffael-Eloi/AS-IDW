@@ -46,6 +46,16 @@
     <link rel="stylesheet" href="assets/css/geral/arvore-mes.css">
     <link rel="stylesheet" href="assets/css/geral/escolhaAluguel.css">
     <link rel="stylesheet" href="assets/css/geral/escolhaAluguel-botao.css">
+    <!-- Formulário semanal -->
+    <link rel="stylesheet" href="assets/css/formularioSemanal/formularioSemanal.css">
+    <link rel="stylesheet" href="assets/css/formularioSemanal/formularioSemanal-qtdSemana.css">
+    <link rel="stylesheet" href="assets/css/formularioSemanal/formularioSemanal-escolhaPlano.css">
+    <link rel="stylesheet" href="assets/css/formularioSemanal/formularioSemanal-botao.css">
+    <!-- Formulário mensal -->
+    <link rel="stylesheet" href="assets/css/formularioMensal/formularioMensal.css">
+    <link rel="stylesheet" href="assets/css/formularioMensal/formularioMensal-escolhaPlano.css">
+    <link rel="stylesheet" href="assets/css/formularioMensal/formularioMensal-qtdMes.css">
+    <link rel="stylesheet" href="assets/css/formularioMensal/formularioMensal-botao.css">
 
     <!-- Título -->
     <title>Avaliação Semestral - IDW</title>
@@ -110,6 +120,27 @@
         <div class="escolhaAluguel">
           <button class="escolhaAluguel__botao">Alugar plano semanal</button>
         </div>
+
+        <form class="formularioSemanal">
+          <fieldset class="formularioSemanal__escolhaPlano">
+            <legend>Qual plano você prefere?</legend>
+            <select>
+                <option>Semanal Básico</option>
+                <option>Semanal Super</option>
+                <option>Semanal Mega</option>
+            </select>
+        </fieldset>
+        
+        <fieldset class="formularioSemanal__qtdSemana">
+          <legend>Por quantas semanas?</legend>
+          <input type="number" placeholder="exemplo 2">
+        </fieldset>
+
+        <button class="formularioSemanal__botao">Calcular valor</button>
+
+        <p></p>
+        </form>
+
       </section>
 
       <section class="aluguelMes" id="aluguelMes">
@@ -166,6 +197,26 @@
         <div class="escolhaAluguel">
           <button class="escolhaAluguel__botao">Alugar plano mensal</button>
         </div>
+
+        <form class="formularioMensal">
+          <fieldset class="formularioMensal__escolhaPlano">
+            <legend>Qual plano você prefere?</legend>
+            <select>
+                <option>Mensal Básico</option>
+                <option>Mensal Super</option>
+                <option>Mensal Mega</option>
+            </select>
+        </fieldset>
+        
+        <fieldset class="formularioMensal__qtdMes">
+          <legend>Por quantos meses?</legend>
+          <input type="number" placeholder="exemplo 2">
+        </fieldset>
+
+        <button class="formularioMensal__botao">Calcular valor</button>
+
+        <p></p>
+        </form>
       </section>
     </main>
 
@@ -175,3 +226,8 @@
     <script src="assets/js/main.js"></script>
   </body>
 </html>
+
+
+
+
+
