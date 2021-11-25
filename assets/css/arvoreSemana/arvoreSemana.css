@@ -1,0 +1,4 @@
+.arvoreSemana {
+  display: flex;
+  justify-content: space-around;
+}
