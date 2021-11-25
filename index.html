@@ -54,14 +54,14 @@
     </header>
 
     <main>
-      <section class="aluguelSemana">
+      <section class="aluguelSemana" id="aluguelSemana">
         <div class="descricaoPlanos">
           <h1>Aluguel de árvores de natal</h1>
           <p>Quer pagar por semana ou por mês ?</p>
           <div class="descricaoPlanos__semanal">
             <p class="descricaoPlanos__semanal__semana">Por semana</p>
             <div class="descricaoPlanos__semanal__switch">
-              <div class="descricaoPlanos__semanal__ball">aaa</div>
+              <div class="descricaoPlanos__semanal__ball" id="descricaoPlanos__semanal__ball">aaa</div>
             </div>
             <p class="descricaoPlanos__semanal__mes">Por mês</p>
           </div>
@@ -75,7 +75,7 @@
             <div class="arvoreSemana__item__descricao">
               <p class="arvore__plano">Plano</p>
               <h3 class="arvore__titulo">Básico</h3>
-              <p class="arvore__preco">R$ 9,99</p>
+              <p class="arvore__preco" id="planoSemanalBasico"></p>
               <p class="arvore__semana">Por semana</p>
             </div>
           </div>
@@ -87,7 +87,7 @@
             <div class="arvoreSemana__item__descricao">
               <p class="arvore__plano">Plano</p>
               <h3 class="arvore__titulo">Super</h3>
-              <p class="arvore__preco">R$ 14,99</p>
+              <p class="arvore__preco" id="planoSemanalSuper"></p>
               <p class="arvore__semana">Por semana</p>
             </div>
           </div>
@@ -97,25 +97,23 @@
               <img src="assets/img/imagem-arvore.png" alt="Imagem ilustrativa árvore de natal">
             </div>
             <div class="arvoreSemana__item__descricao">
-              <p class="arvore__plano">Mega</p>
+              <p class="arvore__plano">Plano</p>
               <h3 class="arvore__titulo">Mega</h3>
-              <p class="arvore__preco">R$ 29,99</p>
+              <p class="arvore__preco" id="planoSemanalMega"></p>
               <p class="arvore__semana">Por semana</p>
             </div>
           </div>
         </div>
       </section>
 
-      <hr>
-
-      <section class="aluguelMes">
+      <section class="aluguelMes" id="aluguelMes">
         <div class="descricaoPlanos">
           <h1>Aluguel de árvores de natal</h1>
           <p>Quer pagar por semana ou por mês ?</p>
           <div class="descricaoPlanos__mensal">
             <p class="descricaoPlanos__mensal__semana">Por semana</p>
             <div class="descricaoPlanos__mensal__switch">
-              <div class="descricaoPlanos__mensal__ball">aaa</div>
+              <div class="descricaoPlanos__mensal__ball" id="descricaoPlanos__mensal__ball">aaa</div>
             </div>
             <p class="descricaoPlanos__mensal__mes">Por mês</p>
           </div>
@@ -129,7 +127,7 @@
             <div class="arvoreMes__item__descricao">
               <p class="arvore__plano">Plano</p>
               <h3 class="arvore__titulo">Básico</h3>
-              <p class="arvore__preco">R$ 29,99</p>
+              <p class="arvore__preco" id="planoMensalBasico"></p>
               <p class="arvore__mes">Por mês</p>
             </div>
           </div>
@@ -141,7 +139,7 @@
             <div class="arvoreMes__item__descricao">
               <p class="arvore__plano">Plano</p>
               <h3 class="arvore__titulo">Super</h3>
-              <p class="arvore__preco">R$ 59,99</p>
+              <p class="arvore__preco" id="planoMensalSuper"></p>
               <p class="arvore__mes">Por mês</p>
             </div>
           </div>
@@ -153,7 +151,7 @@
             <div class="arvoreMes__item__descricao">
               <p class="arvore__plano">Plano</p>
               <h3 class="arvore__titulo">Mega</h3>
-              <p class="arvore__preco">R$ 99,99</p>
+              <p class="arvore__preco" id="planoMensalMega"></p>
               <p class="arvore__mes">Por mês</p>
             </div>
           </div>
@@ -162,5 +160,8 @@
     </main>
 
     <footer></footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

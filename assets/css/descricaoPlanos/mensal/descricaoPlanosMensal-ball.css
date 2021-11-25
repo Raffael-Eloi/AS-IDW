@@ -2,4 +2,11 @@
   background: blue;
   border-radius: 50%;
   color: blue;
+  transition: 400ms all;
+}
+
+.descricaoPlanos__mensal__ball:hover {
+  background: darkblue;
+  color: darkblue;
+  cursor: pointer;
 }
