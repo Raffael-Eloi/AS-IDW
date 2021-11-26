@@ -13,7 +13,6 @@ function iniciar() {
     mega: 99.99
   }
 
-  
   verificaPlanoAtivo(planoSemanal);
   atribuiValorPlanos();
 
@@ -44,16 +43,21 @@ function iniciar() {
   }
   
   function verificaPlanoAtivo(estado) {
+    let aluguelSemana = document.getElementById("aluguelSemana");
+    let aluguelMes = document.getElementById("aluguelMes");
+    let formularioSemanal = document.getElementById("formularioSemanal");
+    let formularioMensal = document.getElementById("formularioMensal");
+
     if (!!estado) {
-      let aluguelMes = document.getElementById("aluguelMes");
       aluguelSemana.style.display = "block";
       aluguelMes.style.display = "none";
+      formularioSemanal.style.display = "none";
     }
     
     else {
-      let aluguelSemana = document.getElementById("aluguelSemana");
       aluguelSemana.style.display = "none";
       aluguelMes.style.display = "block";
+      formularioMensal.style.display = "none";
     }
   }
   
@@ -62,11 +66,90 @@ function iniciar() {
     verificaPlanoAtivo(planoSemanal);
   }
 
+  function verificaTipoPlano(plano, tipo) {
+    if (tipo == "semanal") {
+      if (plano == "Semanal Básico") {
+        return precoSemanal.basico;
+      }
+
+      if (plano == "Semanal Super") {
+        return precoSemanal.super;
+      }
+
+      else {
+        return precoSemanal.mega;
+      }
+    }
+
+    else {
+      if (plano == "Mensal Básico") {
+        return precoMensal.basico;
+      }
+
+      if (plano == "Mensal Super") {
+        return precoMensal.super;
+      }
+
+      else {
+        return precoMensal.mega;
+      }
+    }
+  }
+
+  function calculaPlano(tipo) {
+    if (tipo == "semanal") {
+      let plano = document.getElementById("formularioSemanal__escolhaPlano__option").value;
+      let planoValor = verificaTipoPlano(plano, "semanal");
+      let qtdSemana = document.getElementById("formularioSemanal__qtdSemana__input").value;
+      let valorFinal = document.getElementById("formularioSemanal__valor");
+      valorFinal.textContent = `O valor final é R$ ${planoValor * qtdSemana}`
+      valorFinal.textContent = valorFinal.textContent.replace('.', ',');
+    }
+
+    else {
+      let plano = document.getElementById("formularioMensal__escolhaPlano__option").value;
+      let planoValor = verificaTipoPlano(plano, "mensal");
+      let qtdSemana = document.getElementById("formularioMensal__qtdMes__input").value;
+      let valorFinal = document.getElementById("formularioMensal__valor");
+      valorFinal.textContent = `O valor final é R$ ${planoValor * qtdSemana}`
+      valorFinal.textContent = valorFinal.textContent.replace('.', ',');
+    }
+
+
+  }
+
+  function mostrarFormulario(formulario) {
+    formulario.style.display = "block";
+  }
+  
+
   let botaoPlanoSemanal = document.getElementById("descricaoPlanos__semanal__ball");
   botaoPlanoSemanal.addEventListener("click", function(){ modificaEstadoPlano()})
 
   let botaoPlanoMensal = document.getElementById("descricaoPlanos__mensal__ball");
   botaoPlanoMensal.addEventListener("click", function(){ modificaEstadoPlano()})
+
+
+  let botaoAluguelSemanal = document.getElementById("escolhaAluguelSemanal__botao");
+  let formularioSemanal = document.getElementById("formularioSemanal");
+  botaoAluguelSemanal.addEventListener("click", function(){ mostrarFormulario(formularioSemanal)})
+
+  let botaoAluguelMensal = document.getElementById("escolhaAluguelMensal__botao");
+  let formularioMensal = document.getElementById("formularioMensal");
+  botaoAluguelMensal.addEventListener("click", function(){ mostrarFormulario(formularioMensal)})
+
+
+  let formularioSemanalBotao = document.getElementById("formularioSemanal__botao");
+  let formularioMensalBotao = document.getElementById("formularioMensal__botao");
+  formularioSemanalBotao.addEventListener("click", function(event){
+    event.preventDefault();
+    calculaPlano("semanal");
+  });
+  
+  formularioMensalBotao.addEventListener("click", function(event) {
+    event.preventDefault();
+    calculaPlano("mensal");
+  });
 }
 
 document.addEventListener("DOMContentLoaded", iniciar)
